@@ -14,7 +14,11 @@ plataformas que he puesto en producción. Pensada para desplegar en Netlify.
     ├── styles.css      # sistema de diseño completo
     ├── app.js          # datos de proyectos + interacciones
     ├── favicon.svg
-    └── og.svg          # imagen para compartir en redes
+    ├── og.svg          # imagen para compartir en redes
+    └── logos/          # logos de marca de cada proyecto
+        ├── specteria.png
+        ├── specter.png
+        └── electia.svg
 ```
 
 ## Añadir un proyecto nuevo
@@ -30,11 +34,17 @@ Copia un bloque, cambia los datos y guarda. La tarjeta se genera sola.
   category: 'legaltech',        // legaltech | civictech | corporate
   description: 'Una o dos frases sobre qué hace.',
   tags: ['App web', 'Auth', 'API'],
-  status: 'live',               // 'live' (verde) | 'wip' (ámbar)
-  mark: 'Np',                   // 2 letras que se muestran en la portada
-  colors: ['#5b9bff', '#1e3a8a'],
+  status: 'live',                       // 'live' (verde) | 'wip' (ámbar)
+  logo: '/assets/logos/mi-logo.png',    // opcional: png o svg
+  mark: 'Np',                           // 2 letras de respaldo si no hay logo
+  colors: ['#5b9bff', '#1e3a8a'],       // degradado de la portada
 }
 ```
+
+Los logos van en `assets/logos/` y se muestran sobre una placa clara —
+así se leen bien tanto los que llevan tinta oscura (ElectIA) como los de
+color pleno. Toma los dos `colors` de la propia marca para que la portada
+combine. Si el archivo no carga, la tarjeta cae automáticamente a `mark`.
 
 Si usas una categoría nueva, agrega también su chip en `index.html`:
 

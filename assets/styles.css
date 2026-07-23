@@ -351,13 +351,39 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   position: absolute; inset: 0; z-index: 1;
   display: grid; place-items: center;
 }
-.card__logo span {
+
+/* Placa clara: los tres logos son de marca y algunos llevan tinta oscura,
+   así que necesitan un fondo neutro para leerse bien sobre el degradado. */
+.card__plate {
+  display: grid; place-items: center;
+  width: 92px; height: 92px; border-radius: 24px;
+  background: rgba(255, 255, 255, .95);
+  border: 1px solid rgba(255, 255, 255, .55);
+  box-shadow: 0 16px 38px -14px rgba(0, 0, 0, .65), inset 0 1px 0 rgba(255,255,255,.9);
+  transition: transform .6s var(--ease), box-shadow .6s var(--ease);
+}
+.card:hover .card__plate {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 24px 50px -16px rgba(0, 0, 0, .75), inset 0 1px 0 rgba(255,255,255,.9);
+}
+.card__plate img {
+  width: 58px; height: 58px; object-fit: contain;
+}
+.card__fallback { display: none; }
+.card__plate.is-fallback img { display: none; }
+.card__plate.is-fallback .card__fallback {
+  display: block; font-family: var(--serif); font-size: 2rem;
+  color: #0d1220; letter-spacing: -.03em;
+}
+
+/* Respaldo sin logo: iniciales sobre el degradado */
+.card__mark {
   font-family: var(--serif); font-size: clamp(2.2rem, 5vw, 3rem);
   letter-spacing: -.03em; color: rgba(255,255,255,.94);
   text-shadow: 0 4px 30px rgba(0,0,0,.55);
   transition: transform .6s var(--ease), letter-spacing .6s var(--ease);
 }
-.card:hover .card__logo span { transform: translateY(-3px); letter-spacing: .01em; }
+.card:hover .card__mark { transform: translateY(-3px); letter-spacing: .01em; }
 
 .card__badge {
   position: absolute; top: .85rem; left: .85rem; z-index: 2;

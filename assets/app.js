@@ -4,7 +4,11 @@
    👉  PARA AÑADIR UN PROYECTO NUEVO:
        copia un bloque de PROJECTS, cámbiale los datos y listo.
        Campos: name, kicker, url, category, description, tags,
-               status ('live' | 'wip'), mark, colors [c1, c2]
+               status ('live' | 'wip'), logo, mark, colors [c1, c2]
+
+       logo  → ruta al archivo en /assets/logos/ (png o svg).
+       mark  → 2 letras de respaldo si no hay logo o si no carga.
+       colors→ degradado de fondo de la tarjeta (tomado de la marca).
    ══════════════════════════════════════════════════════════════ */
 
 const PROJECTS = [
@@ -17,8 +21,9 @@ const PROJECTS = [
       'Sitio corporativo de la casa de software. Presenta las verticales LegalTech, FinTech y SaaS, el stack técnico y el proceso de implementación de punta a punta.',
     tags: ['Landing', 'Diseño', 'Marca', 'Responsive'],
     status: 'live',
+    logo: '/assets/logos/specteria.png',
     mark: 'Sp',
-    colors: ['#5b9bff', '#1e3a8a'],
+    colors: ['#2f6bf5', '#7c3aed'],
   },
   {
     name: 'Specter',
@@ -29,8 +34,9 @@ const PROJECTS = [
       'Plataforma que opera el régimen de insolvencia colombiano de principio a fin: del radicado al acuerdo de pago, sin papel suelto. Ley 1116 y Ley 1564.',
     tags: ['Producto', 'Ley 1116', 'Firma electrónica', 'Trazabilidad'],
     status: 'live',
+    logo: '/assets/logos/specter.png',
     mark: 'Sr',
-    colors: ['#22d3ee', '#0f766e'],
+    colors: ['#29abe2', '#1668a8'],
   },
   {
     name: 'ElectIA',
@@ -41,8 +47,9 @@ const PROJECTS = [
       'Sistema de preconteo y auditoría electoral con acceso autenticado. Consolida resultados en tiempo real y deja rastro verificable de cada registro.',
     tags: ['App web', 'Auth', 'Preconteo', 'Tiempo real'],
     status: 'live',
+    logo: '/assets/logos/electia.svg',
     mark: 'El',
-    colors: ['#a78bfa', '#5b21b6'],
+    colors: ['#03a39f', '#121e30'],
   },
 ];
 
@@ -71,6 +78,16 @@ function cardHTML(p, i) {
       ? '<span class="card__badge card__badge--wip"><i></i> En desarrollo</span>'
       : '<span class="card__badge"><i></i> En vivo</span>';
 
+  // Si hay logo se muestra sobre una placa clara; si falla, cae a las iniciales.
+  const emblem = p.logo
+    ? `<div class="card__plate">
+         <img src="${p.logo}" alt="Logo de ${p.name}" width="120" height="120"
+              loading="lazy" decoding="async"
+              onerror="this.closest('.card__plate').classList.add('is-fallback')" />
+         <span class="card__fallback">${p.mark}</span>
+       </div>`
+    : `<span class="card__mark">${p.mark}</span>`;
+
   return `
   <article class="card reveal" data-category="${p.category}" style="--d:${i}">
     <a class="card__link" href="${p.url}" target="_blank" rel="noopener"
@@ -81,7 +98,7 @@ function cardHTML(p, i) {
            radial-gradient(circle at 28% 32%, ${p.colors[0]} 0%, transparent 55%),
            radial-gradient(circle at 74% 70%, ${p.colors[1]} 0%, transparent 58%)"></div>
       ${badge}
-      <div class="card__logo"><span>${p.mark}</span></div>
+      <div class="card__logo">${emblem}</div>
     </div>
 
     <div class="card__body">
