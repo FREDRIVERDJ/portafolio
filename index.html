@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Alfredo — Vibe Coder · Índice de proyectos</title>
+<meta name="description" content="Colección de plataformas y productos digitales construidos por Alfredo. LegalTech, CivicTech y software para industrias reguladas." />
+<meta name="theme-color" content="#04060c" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Alfredo — Vibe Coder · Índice de proyectos" />
+<meta property="og:description" content="Colección de plataformas y productos digitales: LegalTech, CivicTech y software para industrias reguladas." />
+<meta property="og:image" content="/assets/og.svg" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/styles.css" />
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<!-- ── Fondo vivo ───────────────────────────────────────────── -->
+<div class="bg" aria-hidden="true">
+  <div class="bg__grid"></div>
+  <div class="bg__aurora bg__aurora--1"></div>
+  <div class="bg__aurora bg__aurora--2"></div>
+  <div class="bg__aurora bg__aurora--3"></div>
+  <div class="bg__noise"></div>
+  <div class="bg__vignette"></div>
+</div>
+<div class="cursor-glow" aria-hidden="true"></div>
+
+<!-- ── Nav ──────────────────────────────────────────────────── -->
+<header class="nav" id="nav">
+  <a class="nav__brand" href="#top">
+    <span class="nav__mark" aria-hidden="true">
+      <svg viewBox="0 0 32 32" fill="none"><path d="M16 2.5 28.5 9.5v13L16 29.5 3.5 22.5v-13L16 2.5Z" stroke="url(#g)" stroke-width="1.6"/><path d="M16 10.5 22 14v7l-6 3.5L10 21v-7l6-3.5Z" fill="url(#g)" fill-opacity=".9"/><defs><linearGradient id="g" x1="3" y1="3" x2="29" y2="29"><stop stop-color="#5b9bff"/><stop offset=".5" stop-color="#22d3ee"/><stop offset="1" stop-color="#a78bfa"/></linearGradient></defs></svg>
+    </span>
+    <span class="nav__name">Alfredo<span class="nav__dot">.</span></span>
+  </a>
+  <nav class="nav__links" aria-label="Navegación principal">
+    <a href="#work">Proyectos</a>
+    <a href="#stack">Stack</a>
+    <a href="#about">Sobre mí</a>
+  </nav>
+  <a class="btn btn--ghost nav__cta" href="#contact">
+    <span class="pulse" aria-hidden="true"></span> Disponible
+  </a>
+</header>
+
+<main id="top">
+
+  <!-- ── Hero ───────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow reveal">
+        <span class="eyebrow__line"></span>
+        Índice de trabajo · <span class="mono">2026</span>
+      </p>
+
+      <h1 class="hero__title reveal" data-delay="1">
+        Construyo
+        <span class="grad">software</span>
+        <em>que opera</em>
+        procesos reales.
+      </h1>
+
+      <p class="hero__lead reveal" data-delay="2">
+        Vibe coder. Diseño y despliego plataformas de punta a punta para sectores
+        regulados —&nbsp;legal, electoral y financiero&nbsp;— donde el rigor importa
+        tanto como la interfaz.
+      </p>
+
+      <div class="hero__actions reveal" data-delay="3">
+        <a class="btn btn--primary magnetic" href="#work">
+          Ver proyectos
+          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn btn--ghost magnetic" href="#contact">Trabajemos juntos</a>
+      </div>
+
+      <dl class="stats reveal" data-delay="4">
+        <div class="stat"><dt>Proyectos en vivo</dt><dd data-count="3">0</dd></div>
+        <div class="stat"><dt>Uptime en producción</dt><dd data-count="99.98" data-suffix="%" data-decimals="2">0</dd></div>
+        <div class="stat"><dt>Sectores regulados</dt><dd data-count="3">0</dd></div>
+        <div class="stat"><dt>Líneas escritas</dt><dd data-count="120" data-suffix="k+">0</dd></div>
+      </dl>
+    </div>
+
+    <div class="scroll-hint" aria-hidden="true"><span></span></div>
+  </section>
+
+  <!-- ── Proyectos ──────────────────────────────────────────── -->
+  <section class="section" id="work">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <h2 class="section__title">Proyectos<span class="grad">.</span></h2>
+        <p class="section__sub">Todo lo que he puesto en producción hasta hoy. Cada tarjeta abre el sitio real.</p>
+      </div>
+
+      <div class="filters reveal" data-delay="1" role="tablist" aria-label="Filtrar proyectos">
+        <button class="chip is-active" data-filter="all" role="tab" aria-selected="true">Todos</button>
+        <button class="chip" data-filter="legaltech" role="tab" aria-selected="false">LegalTech</button>
+        <button class="chip" data-filter="civictech" role="tab" aria-selected="false">CivicTech</button>
+        <button class="chip" data-filter="corporate" role="tab" aria-selected="false">Corporativo</button>
+      </div>
+
+      <div class="grid" id="projects"><!-- render por JS --></div>
+
+      <p class="grid__empty" id="emptyState" hidden>No hay proyectos en esta categoría todavía.</p>
+    </div>
+  </section>
+
+  <!-- ── Stack ──────────────────────────────────────────────── -->
+  <section class="section section--tight" id="stack">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <h2 class="section__title">Stack<span class="grad">.</span></h2>
+        <p class="section__sub">Las herramientas con las que construyo y despliego.</p>
+      </div>
+    </div>
+    <div class="marquee reveal" data-delay="1">
+      <div class="marquee__track" id="marquee"><!-- render por JS --></div>
+    </div>
+  </section>
+
+  <!-- ── Sobre mí ───────────────────────────────────────────── -->
+  <section class="section" id="about">
+    <div class="wrap about">
+      <div class="about__text reveal">
+        <h2 class="section__title">Sobre mí<span class="grad">.</span></h2>
+        <p>
+          Construyo con IA como copiloto y criterio propio como timón. Mi enfoque:
+          entender profundamente el dominio —&nbsp;una ley, un procedimiento, un
+          escrutinio&nbsp;— y traducirlo en una interfaz que cualquiera pueda operar
+          sin manual.
+        </p>
+        <p>
+          Me interesan los productos donde un error tiene consecuencias: expedientes,
+          votos, acuerdos de pago. Ahí la trazabilidad, la seguridad y el diseño
+          dejan de ser adornos.
+        </p>
+        <ul class="about__list">
+          <li><span class="mono">01</span> Producto de punta a punta: diseño, código y despliegue.</li>
+          <li><span class="mono">02</span> Dominio primero, tecnología después.</li>
+          <li><span class="mono">03</span> Interfaces limpias sobre lógica compleja.</li>
+        </ul>
+      </div>
+      <aside class="about__card reveal" data-delay="1">
+        <div class="terminal">
+          <div class="terminal__bar"><i></i><i></i><i></i><span class="mono">~/alfredo</span></div>
+          <pre class="terminal__body mono"><span class="c-dim">$</span> whoami
+<span class="c-out">vibe-coder</span>
+
+<span class="c-dim">$</span> cat focus.json
+<span class="c-key">{</span>
+  <span class="c-key">"sectores"</span>: [<span class="c-str">"legal"</span>, <span class="c-str">"electoral"</span>, <span class="c-str">"fintech"</span>],
+  <span class="c-key">"principio"</span>: <span class="c-str">"rigor + estética"</span>,
+  <span class="c-key">"estado"</span>: <span class="c-str">"shipping"</span>
+<span class="c-key">}</span>
+
+<span class="c-dim">$</span> <span class="caret">&nbsp;</span></pre>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ── Contacto ───────────────────────────────────────────── -->
+  <section class="section" id="contact">
+    <div class="wrap">
+      <div class="cta reveal">
+        <div class="cta__glow" aria-hidden="true"></div>
+        <p class="eyebrow"><span class="eyebrow__line"></span> Siguiente proyecto</p>
+        <h2 class="cta__title">¿Tienes algo <em>complejo</em> que construir<span class="grad">?</span></h2>
+        <p class="cta__lead">Cuéntame el problema. Si tiene reglas, expedientes o plazos, probablemente sea lo mío.</p>
+        <div class="cta__actions">
+          <a class="btn btn--primary magnetic" href="mailto:alfredodjvirtual22@gmail.com">
+            Escríbeme
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="btn btn--ghost magnetic" href="https://specteria.com/" target="_blank" rel="noopener">Specteria ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <span class="mono">© <span id="year">2026</span> Alfredo · Vibe Coder</span>
+    <span class="mono footer__meta">Hecho a mano · Desplegado en Netlify</span>
+  </div>
+</footer>
+
+<script src="/assets/app.js" defer></script>
+</body>
+</html>

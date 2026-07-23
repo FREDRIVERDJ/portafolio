@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5b9bff"/><stop offset=".5" stop-color="#22d3ee"/><stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+    <radialGradient id="a1" cx="0" cy="0" r="1" gradientTransform="translate(180 90) scale(520)">
+      <stop stop-color="#5b9bff" stop-opacity=".55"/><stop offset="1" stop-color="#5b9bff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="a2" cx="0" cy="0" r="1" gradientTransform="translate(1030 520) scale(480)">
+      <stop stop-color="#a78bfa" stop-opacity=".45"/><stop offset="1" stop-color="#a78bfa" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0v48" fill="none" stroke="#ffffff" stroke-opacity=".05" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="#04060c"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect width="1200" height="630" fill="url(#a1)"/>
+  <rect width="1200" height="630" fill="url(#a2)"/>
+
+  <g transform="translate(88 96)">
+    <path d="M22 0 44 12.7v25.4L22 50.8 0 38.1V12.7L22 0Z" fill="none" stroke="url(#g)" stroke-width="2.4"/>
+    <path d="M22 13.5 33 19.8v12.7L22 38.8 11 32.5V19.8l11-6.3Z" fill="url(#g)"/>
+  </g>
+
+  <text x="88" y="200" font-family="Inter, Segoe UI, sans-serif" font-size="26" font-weight="500"
+        fill="#6b768f" letter-spacing="5">ÍNDICE DE PROYECTOS · 2026</text>
+
+  <text x="88" y="310" font-family="Inter, Segoe UI, sans-serif" font-size="86" font-weight="600"
+        fill="#e9edf6" letter-spacing="-3">Construyo software</text>
+  <text x="88" y="404" font-family="Georgia, serif" font-style="italic" font-size="86"
+        fill="url(#g)" letter-spacing="-3">que opera procesos reales.</text>
+
+  <text x="88" y="486" font-family="Inter, Segoe UI, sans-serif" font-size="28" fill="#a7b0c4">
+    Alfredo — Vibe Coder · LegalTech · CivicTech · FinTech
+  </text>
+
+  <g font-family="ui-monospace, Menlo, monospace" font-size="22" fill="#8b95ab">
+    <rect x="88" y="530" width="176" height="48" rx="24" fill="#ffffff" fill-opacity=".045" stroke="#ffffff" stroke-opacity=".1"/>
+    <text x="112" y="561">Specteria</text>
+    <rect x="280" y="530" width="152" height="48" rx="24" fill="#ffffff" fill-opacity=".045" stroke="#ffffff" stroke-opacity=".1"/>
+    <text x="304" y="561">Specter</text>
+    <rect x="448" y="530" width="152" height="48" rx="24" fill="#ffffff" fill-opacity=".045" stroke="#ffffff" stroke-opacity=".1"/>
+    <text x="472" y="561">ElectIA</text>
+  </g>
+</svg>
