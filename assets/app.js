@@ -6,16 +6,17 @@
    ══════════════════════════════════════════════════════════════ */
 
 /* ── Render de respaldo ─────────────────────────────────────── */
-const grid = document.getElementById('projects');
-if (grid && grid.querySelectorAll('.card').length !== PROJECTS.length) {
-  grid.innerHTML = PROJECTS.map(cardHTML).join('');
+const fill = (id, expected, html) => {
+  const el = document.getElementById(id);
+  if (el && el.children.length !== expected) el.innerHTML = html();
+};
+fill('featured', PROJECTS.filter((p) => p.featured).length, featuredHTML);
+fill('projects', PROJECTS.length, () => PROJECTS.map(cardHTML).join(''));
+fill('toolbox', STACK.length, stackHTML);
+{
+  const log = document.querySelector('.log');
+  if (log && log.children.length !== PROJECTS.length) log.innerHTML = logHTML();
 }
-
-const marquee = document.getElementById('marquee');
-if (marquee && marquee.children.length !== STACK.length * 2) {
-  marquee.innerHTML = stackHTML();
-}
-
 {
   const s = statsData();
   const set = (id, v) => { const el = document.getElementById(id); if (el) el.dataset.count = String(v); };
@@ -36,7 +37,7 @@ chips.forEach((chip) => {
     const filter = chip.dataset.filter;
     let visible = 0;
 
-    document.querySelectorAll('.card').forEach((card) => {
+    document.querySelectorAll('#projects .card').forEach((card) => {
       const match = filter === 'all' || card.dataset.category === filter;
       card.classList.toggle('is-hidden', !match);
       if (match) visible++;

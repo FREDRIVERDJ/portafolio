@@ -14,7 +14,7 @@ plataformas que he puesto en producción. Pensada para desplegar en Netlify.
 │   └── build.js        # escribe las tarjetas de projects.js dentro de index.html
 └── assets/
     ├── styles.css      # sistema de diseño completo
-    ├── projects.js     # DATOS: array PROJECTS y STACK
+    ├── projects.js     # DATOS: PROJECTS (proyectos) y STACK (herramientas por grupo)
     ├── app.js          # interacciones (filtros, animaciones, contadores)
     ├── favicon.svg
     ├── og.svg          # imagen para compartir en redes
@@ -39,7 +39,7 @@ Copia un bloque, cambia los datos, guarda y corre:
 node tools/build.js
 ```
 
-Eso escribe las tarjetas, la cinta de stack y los contadores dentro de
+Eso escribe los destacados, todas las tarjetas, el build log, el stack y los contadores dentro de
 `index.html`, para que Google, LinkedIn y cualquier previsualización las vean
 sin ejecutar JavaScript. Si olvidas correrlo, `app.js` las dibuja igual en el
 navegador, pero los buscadores verían la versión anterior.
@@ -53,6 +53,8 @@ navegador, pero los buscadores verían la versión anterior.
   description: 'Una o dos frases sobre qué hace.',
   tags: ['App web', 'Auth', 'API'],
   status: 'live',                       // 'live' → "En vivo" (verde) | 'wip' → "Próximamente" (ámbar)
+  featured: true,                       // opcional: lo muestra en "Destacados" (máx. 5 recomendado)
+  ship: '2026-04',                      // mes de lanzamiento para el Build log ('2026' si no sabes el mes)
   logo: '/assets/logos/mi-logo.png',    // opcional: png o svg
   mark: 'Np',                           // 2 letras de respaldo si no hay logo
   colors: ['#5b9bff', '#1e3a8a'],       // degradado de la portada

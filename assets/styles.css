@@ -438,23 +438,7 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 .card__link { position: absolute; inset: 0; z-index: 3; }
 
 /* ══ Marquee de stack ══════════════════════════════════════ */
-.marquee {
-  position: relative; overflow: hidden; padding: 1.5rem 0;
-  border-block: 1px solid var(--line);
-  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
-}
-.marquee__track { display: flex; gap: 3rem; width: max-content; animation: slide 42s linear infinite; }
-.marquee:hover .marquee__track { animation-play-state: paused; }
-.marquee__item {
-  display: inline-flex; align-items: center; gap: .6rem;
-  font-size: 1.02rem; font-weight: 500; color: var(--text-dim);
-  letter-spacing: -.02em; white-space: nowrap;
-  transition: color .3s ease;
-}
-.marquee__item:hover { color: var(--text); }
-.marquee__item i { width: 4px; height: 4px; border-radius: 50%; background: var(--grad); flex-shrink: 0; }
-@keyframes slide { to { transform: translateX(-50%); } }
+/* (la cinta de stack fue reemplazada por .toolbox) */
 
 /* ══ Sobre mí ══════════════════════════════════════════════ */
 .about {
@@ -527,6 +511,119 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 /* ══ Footer ════════════════════════════════════════════════ */
 .footer { border-top: 1px solid var(--line); padding: 2rem 0; }
 .footer__inner { display: flex; flex-wrap: wrap; gap: .8rem; justify-content: space-between; align-items: center; color: var(--text-dim); }
+
+/* ══ Destacados (tarjetas grandes) ═════════════════════════ */
+.featured {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.15rem;
+  margin-bottom: clamp(3.5rem, 7vw, 5.5rem);
+}
+.card--feat:first-child {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+}
+.card--feat:first-child .card__visual { aspect-ratio: auto; min-height: 320px; border-bottom: 0; border-right: 1px solid var(--line); }
+.card--feat:first-child .card__plate { width: 124px; height: 124px; border-radius: 32px; }
+.card--feat:first-child .card__plate img { width: 78px; height: 78px; }
+.card--feat:first-child .card__body { padding: 2.1rem 2.2rem 2.2rem; justify-content: center; }
+.card--feat:first-child .card__title { font-size: 1.7rem; }
+.card--feat:first-child .card__desc { font-size: 1rem; }
+.card--feat .card__num { color: var(--cyan); margin-right: .5rem; }
+.section__head--sub { margin-top: 0; padding-top: 2.5rem; border-top: 1px solid var(--line); }
+.section__title--sm { font-size: clamp(1.6rem, 3.4vw, 2.2rem); }
+
+@media (max-width: 860px) {
+  .featured { grid-template-columns: minmax(0, 1fr); }
+  .card--feat:first-child { grid-template-columns: minmax(0, 1fr); }
+  .card--feat:first-child .card__visual { aspect-ratio: 16 / 9; min-height: 0; border-right: 0; border-bottom: 1px solid var(--line); }
+  .card--feat:first-child .card__body { padding: 1.4rem 1.4rem 1.5rem; }
+  .card--feat:first-child .card__title { font-size: 1.35rem; }
+}
+
+/* ══ Cómo trabajo ══════════════════════════════════════════ */
+.steps {
+  list-style: none; counter-reset: step;
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px; background: var(--line);
+  border: 1px solid var(--line); border-radius: var(--r); overflow: hidden;
+}
+.step {
+  background: var(--bg-soft); padding: 1.6rem 1.5rem 1.8rem;
+  position: relative; transition: background .4s ease;
+}
+.step:hover { background: rgba(255,255,255,.035); }
+.step__num { display: block; color: var(--cyan); font-size: .72rem; letter-spacing: .12em; margin-bottom: 1.1rem; }
+.step__title { font-size: 1.15rem; font-weight: 600; letter-spacing: -.02em; margin-bottom: .55rem; }
+.step p { color: var(--text-soft); font-size: .92rem; line-height: 1.6; }
+.step::after {
+  content: ''; position: absolute; left: 1.5rem; right: 1.5rem; bottom: 0; height: 2px;
+  background: var(--grad); transform: scaleX(0); transform-origin: left;
+  transition: transform .6s var(--ease);
+}
+.step:hover::after { transform: scaleX(1); }
+.steps__tagline {
+  margin-top: 2.2rem; font-size: clamp(1.25rem, 2.6vw, 1.7rem); font-weight: 500; letter-spacing: -.02em;
+}
+.steps__tagline em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--text-soft); }
+
+@media (max-width: 900px) { .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .steps { grid-template-columns: minmax(0, 1fr); } }
+
+/* ══ Build log ═════════════════════════════════════════════ */
+.log { list-style: none; border-top: 1px solid var(--line); }
+.log__row {
+  display: grid; grid-template-columns: 7.5rem 1fr auto auto; align-items: center; gap: 1rem;
+  padding: .95rem 0; border-bottom: 1px solid var(--line);
+  transition: background .3s ease, padding-left .3s var(--ease);
+}
+.log__row:hover { background: var(--surface); padding-left: .6rem; }
+.log__date { color: var(--text-dim); font-size: .74rem; letter-spacing: .06em; }
+.log__line { display: none; }
+.log__name { font-weight: 600; letter-spacing: -.01em; display: inline-flex; align-items: center; gap: .3rem; }
+.log__name svg { width: 13px; height: 13px; opacity: .45; }
+.log__row:hover .log__name svg { opacity: 1; color: var(--cyan); }
+.log__kicker { color: var(--text-dim); font-size: .84rem; }
+.log__status {
+  font-family: var(--mono); font-size: .66rem; letter-spacing: .08em; text-transform: uppercase;
+  padding: .25rem .6rem; border-radius: 999px; border: 1px solid;
+}
+.log__status--live { color: #b9f7d4; border-color: rgba(52,211,153,.35); background: rgba(6,24,17,.6); }
+.log__status--wip { color: #ffe2b0; border-color: rgba(251,191,36,.35); background: rgba(30,20,4,.6); }
+
+@media (max-width: 640px) {
+  .log__row { grid-template-columns: 1fr auto; row-gap: .25rem; }
+  .log__date { grid-column: 1 / -1; }
+  .log__kicker { grid-column: 1 / -1; }
+}
+
+/* ══ Stack agrupado ════════════════════════════════════════ */
+.toolbox {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 1px; background: var(--line);
+  border: 1px solid var(--line); border-radius: var(--r); overflow: hidden;
+}
+.tool { background: var(--bg-soft); padding: 1.4rem 1.4rem 1.5rem; }
+.tool__group { color: var(--text-dim); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 500; margin-bottom: 1rem; }
+.tool__items { list-style: none; display: flex; flex-wrap: wrap; gap: .4rem; }
+.tool__items li {
+  font-size: .84rem; padding: .32rem .7rem; border-radius: 999px;
+  background: var(--surface); border: 1px solid var(--line); color: var(--text-soft);
+  transition: color .3s ease, border-color .3s ease;
+}
+.tool__items li:hover { color: var(--text); border-color: var(--line-hi); }
+.tool:first-child .tool__items li:first-child { color: var(--text); border-color: rgba(34,211,238,.45); }
+
+/* ══ Contacto y footer ═════════════════════════════════════ */
+.cta__mail { display: inline-block; margin: -.6rem auto 1.8rem; color: var(--cyan); font-size: .9rem; }
+.cta__mail:hover { text-decoration: underline; }
+.footer__inner { gap: 1.2rem 2rem; }
+.footer__id { display: grid; gap: .1rem; }
+.footer__name { color: var(--text); font-weight: 600; letter-spacing: -.01em; }
+.footer__links { display: flex; flex-wrap: wrap; gap: 1.3rem; }
+.footer__links a { color: var(--text-soft); transition: color .3s ease; }
+.footer__links a:hover { color: var(--text); }
 
 /* ══ Animaciones de entrada ════════════════════════════════ */
 /* Sin JS el contenido se muestra siempre: la clase .js la añade el head. */
