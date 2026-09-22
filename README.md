@@ -7,12 +7,15 @@ plataformas que he puesto en producción. Pensada para desplegar en Netlify.
 
 ```
 .
-├── index.html          # toda la estructura de la página
+├── index.html          # toda la estructura de la página (tarjetas ya escritas)
 ├── netlify.toml        # configuración de despliegue, cabeceras y caché
 ├── robots.txt
+├── tools/
+│   └── build.js        # escribe las tarjetas de projects.js dentro de index.html
 └── assets/
     ├── styles.css      # sistema de diseño completo
-    ├── app.js          # datos de proyectos + interacciones
+    ├── projects.js     # DATOS: array PROJECTS y STACK
+    ├── app.js          # interacciones (filtros, animaciones, contadores)
     ├── favicon.svg
     ├── og.svg          # imagen para compartir en redes
     └── logos/          # logos de marca de cada proyecto
@@ -29,8 +32,17 @@ plataformas que he puesto en producción. Pensada para desplegar en Netlify.
 
 ## Añadir un proyecto nuevo
 
-Todo vive en un solo lugar: el array `PROJECTS` al inicio de `assets/app.js`.
-Copia un bloque, cambia los datos y guarda. La tarjeta se genera sola.
+Todo vive en un solo lugar: el array `PROJECTS` al inicio de `assets/projects.js`.
+Copia un bloque, cambia los datos, guarda y corre:
+
+```bash
+node tools/build.js
+```
+
+Eso escribe las tarjetas, la cinta de stack y los contadores dentro de
+`index.html`, para que Google, LinkedIn y cualquier previsualización las vean
+sin ejecutar JavaScript. Si olvidas correrlo, `app.js` las dibuja igual en el
+navegador, pero los buscadores verían la versión anterior.
 
 ```js
 {

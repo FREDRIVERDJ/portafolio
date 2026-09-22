@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/assets/styles.css?v=2" />
+<link rel="stylesheet" href="/assets/styles.css?v=3" />
 <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -83,10 +83,10 @@
       </div>
 
       <dl class="stats reveal" data-delay="4">
-        <div class="stat"><dt>Proyectos en vivo</dt><dd data-count="5">0</dd></div>
-        <div class="stat"><dt>Próximos a lanzar</dt><dd data-count="4">0</dd></div>
-        <div class="stat"><dt>Sectores</dt><dd data-count="7">0</dd></div>
-        <div class="stat"><dt>Líneas escritas</dt><dd data-count="120" data-suffix="k+">0</dd></div>
+        <div class="stat"><dt>Proyectos en vivo</dt><dd id="statLive" data-count="5">5</dd></div>
+        <div class="stat"><dt>Próximos a lanzar</dt><dd id="statWip" data-count="4">4</dd></div>
+        <div class="stat"><dt>Sectores</dt><dd id="statSectors" data-count="7">7</dd></div>
+        <div class="stat"><dt>Líneas escritas</dt><dd data-count="120" data-suffix="k+">120k+</dd></div>
       </dl>
     </div>
 
@@ -112,7 +112,271 @@
         <button class="chip" data-filter="corporate" role="tab" aria-selected="false">Corporativo</button>
       </div>
 
-      <div class="grid" id="projects"><!-- render por JS --></div>
+      <div class="grid" id="projects">
+      <!-- projects:start -->
+
+  <article class="card reveal" data-category="corporate" style="--d:0">
+    <a class="card__link" href="https://specteria.com/" target="_blank" rel="noopener"
+       aria-label="Abrir Specteria en una pestaña nueva"></a>
+
+    <div class="card__visual">
+      <div class="card__blob" style="background:
+           radial-gradient(circle at 28% 32%, #2f6bf5 0%, transparent 55%),
+           radial-gradient(circle at 74% 70%, #7c3aed 0%, transparent 58%)"></div>
+      <span class="card__badge"><i></i> En vivo</span>
+      <div class="card__logo"><div class="card__plate">
+         <img src="/assets/logos/specteria.png" alt="Logo de Specteria" width="120" height="120"
+              loading="lazy" decoding="async"
+              onerror="this.closest('.card__plate').classList.add('is-fallback')" />
+         <span class="card__fallback">Sp</span>
+       </div></div>
+    </div>
+
+    <div class="card__body">
+      <p class="card__kicker">Casa de software · Corporativo</p>
+      <h3 class="card__title">Specteria <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></h3>
+      <p class="card__desc">Sitio corporativo de la casa de software. Presenta las verticales LegalTech, FinTech y SaaS, el stack técnico y el proceso de implementación de punta a punta.</p>
+      <div class="card__tags"><span class="tag">Landing</span><span class="tag">Diseño</span><span class="tag">Marca</span><span class="tag">Responsive</span></div>
+      <div class="card__foot">
+        <span class="card__url">specteria.com</span>
+        <span class="card__go">Visitar <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </div>
+    </div>
+  </article>
+
+  <article class="card reveal" data-category="legaltech" style="--d:1">
+    <a class="card__link" href="https://specteria.com/specter.html" target="_blank" rel="noopener"
+       aria-label="Abrir Specter en una pestaña nueva"></a>
+
+    <div class="card__visual">
+      <div class="card__blob" style="background:
+           radial-gradient(circle at 28% 32%, #29abe2 0%, transparent 55%),
+           radial-gradient(circle at 74% 70%, #1668a8 0%, transparent 58%)"></div>
+      <span class="card__badge"><i></i> En vivo</span>
+      <div class="card__logo"><div class="card__plate">
+         <img src="/assets/logos/specter.png" alt="Logo de Specter" width="120" height="120"
+              loading="lazy" decoding="async"
+              onerror="this.closest('.card__plate').classList.add('is-fallback')" />
+         <span class="card__fallback">Sr</span>
+       </div></div>
+    </div>
+
+    <div class="card__body">
+      <p class="card__kicker">LegalTech · Insolvencia</p>
+      <h3 class="card__title">Specter <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></h3>
+      <p class="card__desc">Plataforma que opera el régimen de insolvencia colombiano de principio a fin: del radicado al acuerdo de pago, sin papel suelto. Ley 1116 y Ley 1564.</p>
+      <div class="card__tags"><span class="tag">Producto</span><span class="tag">Ley 1116</span><span class="tag">Firma electrónica</span><span class="tag">Trazabilidad</span></div>
+      <div class="card__foot">
+        <span class="card__url">specteria.com/specter.html</span>
+        <span class="card__go">Visitar <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </div>
+    </div>
+  </article>
+
+  <article class="card reveal" data-category="civictech" style="--d:2">
+    <a class="card__link" href="https://electia.co/preconteo/login?next=%2F" target="_blank" rel="noopener"
+       aria-label="Abrir ElectIA en una pestaña nueva"></a>
+
+    <div class="card__visual">
+      <div class="card__blob" style="background:
+           radial-gradient(circle at 28% 32%, #03a39f 0%, transparent 55%),
+           radial-gradient(circle at 74% 70%, #121e30 0%, transparent 58%)"></div>
+      <span class="card__badge"><i></i> En vivo</span>
+      <div class="card__logo"><div class="card__plate">
+         <img src="/assets/logos/electia.svg" alt="Logo de ElectIA" width="120" height="120"
+              loading="lazy" decoding="async"
+              onerror="this.closest('.card__plate').classList.add('is-fallback')" />
+         <span class="card__fallback">El</span>
+       </div></div>
+    </div>
+
+    <div class="card__body">
+      <p class="card__kicker">CivicTech · Auditoría electoral</p>
+      <h3 class="card__title">ElectIA <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></h3>
+      <p class="card__desc">Sistema de preconteo y auditoría electoral con acceso autenticado. Consolida resultados en tiempo real y deja rastro verificable de cada registro.</p>
+      <div class="card__tags"><span class="tag">App web</span><span class="tag">Auth</span><span class="tag">Preconteo</span><span class="tag">Tiempo real</span></div>
+      <div class="card__foot">
+        <span class="card__url">electia.co/preconteo/login</span>
+        <span class="card__go">Visitar <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </div>
+    </div>
+  </article>
+
+  <article class="card reveal" data-category="social" style="--d:3">
+    <a class="card__link" href="https://uncorazoncontigo.com/" target="_blank" rel="noopener"
+       aria-label="Abrir Un Corazón Contigo en una pestaña nueva"></a>
+
+    <div class="card__visual">
+      <div class="card__blob" style="background:
+           radial-gradient(circle at 28% 32%, #e63032 0%, transparent 55%),
+           radial-gradient(circle at 74% 70%, #022e5b 0%, transparent 58%)"></div>
+      <span class="card__badge"><i></i> En vivo</span>
+      <div class="card__logo"><div class="card__plate">
+         <img src="/assets/logos/uncorazoncontigo.svg" alt="Logo de Un Corazón Contigo" width="120" height="120"
+              loading="lazy" decoding="async"
+              onerror="this.closest('.card__plate').classList.add('is-fallback')" />
+         <span class="card__fallback">Uc</span>
+       </div></div>
+    </div>
+
+    <div class="card__body">
+      <p class="card__kicker">Impacto social · Voluntariado profesional</p>
+      <h3 class="card__title">Un Corazón Contigo <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></h3>
+      <p class="card__desc">Conecta a personas que necesitan apoyo con profesionales voluntarios de psicología, medicina, asesoría jurídica y trabajo social. Agenda, oficina virtual y muro de acompañamiento. Gratis, confidencial y sin lista de espera.</p>
+      <div class="card__tags"><span class="tag">Plataforma</span><span class="tag">Citas en línea</span><span class="tag">Salud mental</span><span class="tag">Accesibilidad</span></div>
+      <div class="card__foot">
+        <span class="card__url">uncorazoncontigo.com</span>
+        <span class="card__go">Visitar <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </div>
+    </div>
+  </article>
+
+  <article class="card reveal" data-category="social" style="--d:4">
+    <a class="card__link" href="https://www.winclus.com/" target="_blank" rel="noopener"
+       aria-label="Abrir Winclus en una pestaña nueva"></a>
+
+    <div class="card__visual">
+      <div class="card__blob" style="background:
+           radial-gradient(circle at 28% 32%, #2743b4 0%, transparent 55%),
+           radial-gradient(circle at 74% 70%, #34c26b 0%, transparent 58%)"></div>
+      <span class="card__badge"><i></i> En vivo</span>
+      <div class="card__logo"><div class="card__plate">
+         <img src="/assets/logos/winclus.png" alt="Logo de Winclus" width="120" height="120"
+              loading="lazy" decoding="async"
+              onerror="this.closest('.card__plate').classList.add('is-fallback')" />
+         <span class="card__fallback">Wi</span>
+       </div></div>
+    </div>
+
+    <div class="card__body">
+      <p class="card__kicker">Impacto social · Accesibilidad digital</p>
+      <h3 class="card__title">Winclus <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></h3>
+      <p class="card__desc">Programa gratuito para Windows que mueve el puntero con la cabeza o los ojos y hace clic con un gesto. Solo necesita una cámara web; todo se procesa en el equipo, sin internet. Código abierto bajo Apache 2.0.</p>
+      <div class="card__tags"><span class="tag">App Windows</span><span class="tag">Visión por computadora</span><span class="tag">Open source</span><span class="tag">Sin internet</span></div>
+      <div class="card__foot">
+        <span class="card__url">www.winclus.com</span>
+        <span class="card__go">Visitar <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </div>
+    </div>
+  </article>
+
+  <article class="card reveal" data-category="edtech" style="--d:5">
+    <a class="card__link" href="https://www.bukkia.com/" target="_blank" rel="noopener"
+       aria-label="Abrir Bukkia en una pestaña nueva"></a>
+
+    <div class="card__visual">
+      <div class="card__blob" style="background:
+           radial-gradient(circle at 28% 32%, #1e50c8 0%, transparent 55%),
+           radial-gradient(circle at 74% 70%, #e2b23c 0%, transparent 58%)"></div>
+      <span class="card__badge card__badge--wip"><i></i> Próximamente</span>
+      <div class="card__logo"><div class="card__plate">
+         <img src="/assets/logos/bukkia.png" alt="Logo de Bukkia" width="120" height="120"
+              loading="lazy" decoding="async"
+              onerror="this.closest('.card__plate').classList.add('is-fallback')" />
+         <span class="card__fallback">Bk</span>
+       </div></div>
+    </div>
+
+    <div class="card__body">
+      <p class="card__kicker">EdTech · Libros escolares digitales</p>
+      <h3 class="card__title">Bukkia <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></h3>
+      <p class="card__desc">Plataforma educativa para colegios de Colombia: los libros de primero a once alineados con los DBA del Ministerio y las pruebas Saber, en el teléfono que el estudiante ya tiene. El docente asigna y califica; la familia sigue el avance.</p>
+      <div class="card__tags"><span class="tag">Plataforma</span><span class="tag">Colegios</span><span class="tag">Pruebas Saber</span><span class="tag">Offline</span></div>
+      <div class="card__foot">
+        <span class="card__url">www.bukkia.com</span>
+        <span class="card__go">Visitar <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </div>
+    </div>
+  </article>
+
+  <article class="card reveal" data-category="fintech" style="--d:6">
+    <a class="card__link" href="https://hukpay.com/" target="_blank" rel="noopener"
+       aria-label="Abrir Hukpay en una pestaña nueva"></a>
+
+    <div class="card__visual">
+      <div class="card__blob" style="background:
+           radial-gradient(circle at 28% 32%, #7a00c8 0%, transparent 55%),
+           radial-gradient(circle at 74% 70%, #ff3df0 0%, transparent 58%)"></div>
+      <span class="card__badge card__badge--wip"><i></i> Próximamente</span>
+      <div class="card__logo"><div class="card__plate">
+         <img src="/assets/logos/hukpay.png" alt="Logo de Hukpay" width="120" height="120"
+              loading="lazy" decoding="async"
+              onerror="this.closest('.card__plate').classList.add('is-fallback')" />
+         <span class="card__fallback">Hk</span>
+       </div></div>
+    </div>
+
+    <div class="card__body">
+      <p class="card__kicker">FinTech · Pasarela de pagos</p>
+      <h3 class="card__title">Hukpay <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></h3>
+      <p class="card__desc">Pasarela de pagos para comercios de Colombia: tarjetas con cuotas, PSE, Nequi, Daviplata y Bre-B en una sola integración. Checkout embebido, links de pago, API y SDK, antifraude propio y tokenización.</p>
+      <div class="card__tags"><span class="tag">Pagos</span><span class="tag">API + SDK</span><span class="tag">Bre-B</span><span class="tag">Antifraude</span></div>
+      <div class="card__foot">
+        <span class="card__url">hukpay.com</span>
+        <span class="card__go">Visitar <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </div>
+    </div>
+  </article>
+
+  <article class="card reveal" data-category="govtech" style="--d:7">
+    <a class="card__link" href="https://www.siutra.com/" target="_blank" rel="noopener"
+       aria-label="Abrir SIUTRA en una pestaña nueva"></a>
+
+    <div class="card__visual">
+      <div class="card__blob" style="background:
+           radial-gradient(circle at 28% 32%, #0b2d4a 0%, transparent 55%),
+           radial-gradient(circle at 74% 70%, #2bb673 0%, transparent 58%)"></div>
+      <span class="card__badge card__badge--wip"><i></i> Próximamente</span>
+      <div class="card__logo"><div class="card__plate">
+         <img src="/assets/logos/siutra.png" alt="Logo de SIUTRA" width="120" height="120"
+              loading="lazy" decoding="async"
+              onerror="this.closest('.card__plate').classList.add('is-fallback')" />
+         <span class="card__fallback">Si</span>
+       </div></div>
+    </div>
+
+    <div class="card__body">
+      <p class="card__kicker">GovTech · Trámites de tránsito</p>
+      <h3 class="card__title">SIUTRA <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></h3>
+      <p class="card__desc">Sistema Único de Trámites de tránsito para Colombia. Interconecta a los organismos de tránsito en un solo canal, verifica contra RUNT y SIMIT antes de cobrar y deja cada trámite en un expediente electrónico sellado.</p>
+      <div class="card__tags"><span class="tag">Plataforma</span><span class="tag">RUNT · SIMIT</span><span class="tag">Firma digital</span><span class="tag">Trazabilidad</span></div>
+      <div class="card__foot">
+        <span class="card__url">www.siutra.com</span>
+        <span class="card__go">Visitar <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </div>
+    </div>
+  </article>
+
+  <article class="card reveal" data-category="civictech" style="--d:8">
+    <a class="card__link" href="https://www.gestratega.com/" target="_blank" rel="noopener"
+       aria-label="Abrir Gestratega en una pestaña nueva"></a>
+
+    <div class="card__visual">
+      <div class="card__blob" style="background:
+           radial-gradient(circle at 28% 32%, #002256 0%, transparent 55%),
+           radial-gradient(circle at 74% 70%, #c8102e 0%, transparent 58%)"></div>
+      <span class="card__badge card__badge--wip"><i></i> Próximamente</span>
+      <div class="card__logo"><div class="card__plate">
+         <img src="/assets/logos/gestratega.png" alt="Logo de Gestratega" width="120" height="120"
+              loading="lazy" decoding="async"
+              onerror="this.closest('.card__plate').classList.add('is-fallback')" />
+         <span class="card__fallback">Gs</span>
+       </div></div>
+    </div>
+
+    <div class="card__body">
+      <p class="card__kicker">CivicTech · Campañas políticas</p>
+      <h3 class="card__title">Gestratega <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></h3>
+      <p class="card__desc">El sistema operativo de una campaña política: estructura de líderes, voto declarado frente a voto efectivo, mapa de calor por barrio, simulador electoral y un War Room que el día de la elección muestra el conteo mesa por mesa.</p>
+      <div class="card__tags"><span class="tag">Plataforma</span><span class="tag">Simulador</span><span class="tag">War Room</span><span class="tag">Multi-perfil</span></div>
+      <div class="card__foot">
+        <span class="card__url">www.gestratega.com</span>
+        <span class="card__go">Visitar <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </div>
+    </div>
+  </article>
+      <!-- projects:end -->
+      </div>
 
       <p class="grid__empty" id="emptyState" hidden>No hay proyectos en esta categoría todavía.</p>
     </div>
@@ -127,7 +391,11 @@
       </div>
     </div>
     <div class="marquee reveal" data-delay="1">
-      <div class="marquee__track" id="marquee"><!-- render por JS --></div>
+      <div class="marquee__track" id="marquee">
+      <!-- stack:start -->
+      <span class="marquee__item"><i></i>HTML5</span><span class="marquee__item"><i></i>CSS3</span><span class="marquee__item"><i></i>JavaScript</span><span class="marquee__item"><i></i>React</span><span class="marquee__item"><i></i>Next.js</span><span class="marquee__item"><i></i>Tailwind</span><span class="marquee__item"><i></i>Node.js</span><span class="marquee__item"><i></i>Python</span><span class="marquee__item"><i></i>PostgreSQL</span><span class="marquee__item"><i></i>Supabase</span><span class="marquee__item"><i></i>Netlify</span><span class="marquee__item"><i></i>Vercel</span><span class="marquee__item"><i></i>Claude</span><span class="marquee__item"><i></i>n8n</span><span class="marquee__item"><i></i>Git</span><span class="marquee__item"><i></i>HTML5</span><span class="marquee__item"><i></i>CSS3</span><span class="marquee__item"><i></i>JavaScript</span><span class="marquee__item"><i></i>React</span><span class="marquee__item"><i></i>Next.js</span><span class="marquee__item"><i></i>Tailwind</span><span class="marquee__item"><i></i>Node.js</span><span class="marquee__item"><i></i>Python</span><span class="marquee__item"><i></i>PostgreSQL</span><span class="marquee__item"><i></i>Supabase</span><span class="marquee__item"><i></i>Netlify</span><span class="marquee__item"><i></i>Vercel</span><span class="marquee__item"><i></i>Claude</span><span class="marquee__item"><i></i>n8n</span><span class="marquee__item"><i></i>Git</span>
+      <!-- stack:end -->
+      </div>
     </div>
   </section>
 
@@ -200,6 +468,7 @@
   </div>
 </footer>
 
-<script src="/assets/app.js?v=2" defer></script>
+<script src="/assets/projects.js?v=3" defer></script>
+<script src="/assets/app.js?v=3" defer></script>
 </body>
 </html>
