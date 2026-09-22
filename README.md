@@ -18,7 +18,13 @@ plataformas que he puesto en producción. Pensada para desplegar en Netlify.
     └── logos/          # logos de marca de cada proyecto
         ├── specteria.png
         ├── specter.png
-        └── electia.svg
+        ├── electia.svg
+        ├── uncorazoncontigo.svg
+        ├── winclus.png
+        ├── bukkia.png
+        ├── hukpay.png
+        ├── siutra.png
+        └── gestratega.png
 ```
 
 ## Añadir un proyecto nuevo
@@ -31,10 +37,10 @@ Copia un bloque, cambia los datos y guarda. La tarjeta se genera sola.
   name: 'Nombre del proyecto',
   kicker: 'Categoría · Subtítulo corto',
   url: 'https://mi-sitio.com/',
-  category: 'legaltech',        // legaltech | civictech | corporate
+  category: 'legaltech',        // legaltech | civictech | govtech | fintech | edtech | social | corporate
   description: 'Una o dos frases sobre qué hace.',
   tags: ['App web', 'Auth', 'API'],
-  status: 'live',                       // 'live' (verde) | 'wip' (ámbar)
+  status: 'live',                       // 'live' → "En vivo" (verde) | 'wip' → "Próximamente" (ámbar)
   logo: '/assets/logos/mi-logo.png',    // opcional: png o svg
   mark: 'Np',                           // 2 letras de respaldo si no hay logo
   colors: ['#5b9bff', '#1e3a8a'],       // degradado de la portada

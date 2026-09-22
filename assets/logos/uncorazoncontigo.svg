@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="Un Corazón Contigo">
+  <title>Un Corazón Contigo</title>
+  <desc>Dos personas que se abrazan formando un corazón, con un corazón pequeño en el centro.</desc>
+
+  <!-- Cuerpos: dos brazos que se curvan hasta cerrar un corazón -->
+  <g fill="none" stroke-width="19" stroke-linecap="round">
+    <path d="M64 116C36 100 20 82 20 64c0-14 10-22 20-22s18 8 24 20" stroke="#E63032"/>
+    <path d="M64 116c28-16 44-34 44-52 0-14-10-22-20-22s-18 8-24 20" stroke="#022E5B"/>
+  </g>
+
+  <!-- Manos: los dedos van tallados en blanco sobre el trazo -->
+  <g fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" opacity=".95">
+    <path d="M44 101c5.5 3.6 11 6.6 16.5 9"/>
+    <path d="M40.5 106.5c5 3.3 10 6 15 8.2"/>
+    <path d="M83.5 101c-5.5 3.6-11 6.6-16.5 9"/>
+    <path d="M87 106.5c-5 3.3-10 6-15 8.2"/>
+  </g>
+
+  <!-- Cabezas -->
+  <circle cx="37" cy="19" r="12.5" fill="#E63032"/>
+  <circle cx="91" cy="19" r="12.5" fill="#022E5B"/>
+
+  <!-- El corazón que las une -->
+  <path d="M64 82c-9-6.5-14-11.5-14-17 0-4.4 3.4-7.5 7.4-7.5 2.7 0 5.1 1.5 6.6 4 1.5-2.5 3.9-4 6.6-4 4 0 7.4 3.1 7.4 7.5 0 5.5-5 10.5-14 17z" fill="#F8B410"/>
+</svg>
